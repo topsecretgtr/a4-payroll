@@ -34,11 +34,19 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
+        <li class="nav-item">
+          <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Starter Pages
+              Dashboard
+            </p>
+          </a>
+        </li>
+        {{-- <li class="nav-item menu-open">
+          <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -56,12 +64,20 @@
               </a>
             </li>
           </ul>
+        </li> --}}
+        <li class="nav-item">
+          <a href="employees" class="nav-link {{ Request::is('employees') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-regular fa-users"></i>
+            <p>
+              Employees
+            </p>
+          </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="about" class="nav-link {{ Request::is('about') ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Simple Link
+              About
               <span class="right badge badge-danger">New</span>
             </p>
           </a>
