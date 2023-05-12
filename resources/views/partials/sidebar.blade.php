@@ -66,7 +66,7 @@
           </ul>
         </li> --}}
         <li class="nav-item">
-          <a href="employees" class="nav-link {{ Request::is('employees') ? 'active' : '' }}">
+          <a href="/employees" class="nav-link {{ Request::is('employees') ? 'active' : '' }}">
             <i class="nav-icon fas fa-regular fa-users"></i>
             <p>
               Employees
@@ -74,7 +74,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="about" class="nav-link {{ Request::is('about') ? 'active' : '' }}">
+          <a href="/about" class="nav-link {{ Request::is('about') ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
               About

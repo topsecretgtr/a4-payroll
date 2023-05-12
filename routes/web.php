@@ -23,7 +23,9 @@ Route::get('/employees', function () {
     $employees = [
         [
             "id" => "1",
-            "name" => "Andres",
+            "firstName" => "Andres",
+            "lastName" => "Ang",
+            "slug" => "andres-ang",
             "sex" => "Laki",
             "age" => "39",
             "address" => "monginsidi",
@@ -31,7 +33,9 @@ Route::get('/employees', function () {
         ],
         [
             "id" => "2",
-            "name" => "Grace",
+            "firstName" => "Grace",
+            "lastName" => "Togelang",
+            "slug" => "grace-togelang",
             "sex" => "Perempuan",
             "age" => "39",
             "address" => "Cut Nyak Dien",
@@ -39,7 +43,9 @@ Route::get('/employees', function () {
         ],
         [
             "id" => "3",
-            "name" => "Aiden",
+            "firstName" => "Aiden",
+            "lastName" => "Ang",
+            "slug" => "aiden-ang",
             "sex" => "Laki",
             "age" => "12",
             "address" => "Sutomo",
@@ -47,7 +53,9 @@ Route::get('/employees', function () {
         ],
         [
             "id" => "4",
-            "name" => "Amelia",
+            "firstName" => "Amelia",
+            "lastName" => "Ang",
+            "slug" => "amelia-ang",
             "sex" => "Perempuan",
             "age" => "10",
             "address" => "Santigi",
@@ -55,16 +63,84 @@ Route::get('/employees', function () {
         ],
         [
             "id" => "5",
-            "name" => "Adeline",
+            "firstName" => "Adeline",
+            "lastName" => "Ang",
+            "slug" => "adeline-ang",
             "sex" => "Perempuan",
             "age" => "5",
             "address" => "Sis Aljufri",
             "position" => "Leader",
         ]
     ];
-    return view('employees', [
-        "title" => "Empployees",
+    return view('hr.employees', [
+        "title" => "Employees",
         "employees" => $employees
+    ]);
+});
+
+Route::get('/employees/{slug}', function ($slug) {
+    $employees = [
+        [
+            "id" => "1",
+            "firstName" => "Andres",
+            "lastName" => "Ang",
+            "slug" => "andres-ang",
+            "sex" => "Laki",
+            "age" => "39",
+            "address" => "monginsidi",
+            "position" => "Manager",
+        ],
+        [
+            "id" => "2",
+            "firstName" => "Grace",
+            "lastName" => "Togelang",
+            "slug" => "grace-togelang",
+            "sex" => "Perempuan",
+            "age" => "39",
+            "address" => "Cut Nyak Dien",
+            "position" => "SPV",
+        ],
+        [
+            "id" => "3",
+            "firstName" => "Aiden",
+            "lastName" => "Ang",
+            "slug" => "aiden-ang",
+            "sex" => "Laki",
+            "age" => "12",
+            "address" => "Sutomo",
+            "position" => "Waiter",
+        ],
+        [
+            "id" => "4",
+            "firstName" => "Amelia",
+            "lastName" => "Ang",
+            "slug" => "amelia-ang",
+            "sex" => "Perempuan",
+            "age" => "10",
+            "address" => "Santigi",
+            "position" => "Housekeeping",
+        ],
+        [
+            "id" => "5",
+            "firstName" => "Adeline",
+            "lastName" => "Ang",
+            "slug" => "adeline-ang",
+            "sex" => "Perempuan",
+            "age" => "5",
+            "address" => "Sis Aljufri",
+            "position" => "Leader",
+        ]
+    ];
+    
+    $new_emp =[];
+    foreach($employees as $emp){
+        if($emp["slug"]===$slug){
+            $new_emp = $emp;
+        }
+    };
+    return view('hr.employee', [
+        "title" => "Single Employee",
+        "employee" => $new_emp
     ]);
 });
 

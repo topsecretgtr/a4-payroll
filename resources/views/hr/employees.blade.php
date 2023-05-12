@@ -28,7 +28,8 @@
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
+            <th scope="col"> First Name</th>
+            <th scope="col"> Last Name</th>
             <th scope="col">Sex</th>
             <th scope="col">Age</th>
             <th scope="col">Address</th>
@@ -39,7 +40,8 @@
           @foreach($employees as $employee)
             <tr>
               <th scope="row">{{ $employee["id"] }}</th>
-              <td>{{ $employee["name"] }}</td>
+              <td><a href="/employees/{{ $employee["slug"] }}">{{ $employee["firstName"] }}</td>
+              <td>{{ $employee["lastName"] }}</td>
               <td>{{ $employee["sex"] }}</td>
               <td>{{ $employee["age"] }}</td>
               <td>{{ $employee["address"] }}</td>
