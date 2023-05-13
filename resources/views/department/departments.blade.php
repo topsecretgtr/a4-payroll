@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Employees</h1>
+            <h1 class="m-0">Company Departments</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -28,26 +28,14 @@
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col"> First Name</th>
-            <th scope="col"> Last Name</th>
-            <th scope="col">Sex</th>
-            <th scope="col">Age</th>
-            <th scope="col">Address</th>
-            <th scope="col">Position</th>
             <th scope="col">Department</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($employees as $employee)
+          @foreach($departments as $department)
             <tr>
-              <th scope="row">{{ $employee->id }}</th>
-              <td><a href="/employees/{{ $employee->slug }}">{{ $employee->firstName }}</td>
-              <td>{{ $employee->lastName }}</td>
-              <td>{{ $employee->sex }}</td>
-              <td>{{ $employee->age }}</td>
-              <td>{{ $employee->address }}</td>
-              <td>{{ $employee->position }}</td>
-              <td><a href="/departments/{{ $employee->department->slug }}">{{ $employee->department->name }}</td>
+              <th scope="row">{{ $department->id }}</th>
+              <td><a href="/departments/{{ $department->slug }}">{{ $department->name }}</td>
             </tr>
           @endforeach
         </tbody>

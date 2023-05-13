@@ -36,9 +36,12 @@
                        alt="User profile picture">
                 </div>
                 <h3 class="profile-username text-center">{{ $employee->firstName. " ".$employee->lastName }}</h3>
-
-                <p class="text-muted text-center">{{ $employee->position }}</p>
-
+                <p class="text-muted text-center">
+                  <i class="fas fa-solid fa-restroom mr-1 text-center"></i> {{ $employee->sex }}
+                </p>                  
+                <p class="text-muted text-center">
+                  <i class="fas fa-solid fa-clock mr-1 text-center"></i> {{ $employee->age }}
+                </p>
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
                     <b>Followers</b> <a class="float-right">1,322</a>
@@ -64,18 +67,15 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-solid fa-restroom mr-1"></i> Sex</strong>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Position</strong>
 
-                <p class="text-muted">
-                  {{ $employee->sex }}
-                </p>
+                <p class="text-muted">{{ $employee->position }}</p>
 
                 <hr>
-                <strong><i class="fas fa-solid fa-clock mr-1"></i> Age</strong>
 
-                <p class="text-muted">
-                  {{ $employee->age }}
-                </p>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Department</strong>
+
+                <p class="text-muted">{{ $employee->department->name }}</p>
 
                 <hr>
 
