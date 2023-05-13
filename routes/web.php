@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/employees', [EmployeeController::class, 'index']);
 
-Route::get('/employees/{slug}', [EmployeeController::class, 'show']);
+Route::get('/employees/{employee:slug}', [EmployeeController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [

@@ -11,22 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('is_admin')->default(false);
-            $table->rememberToken();
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('slug')->unique();
+            $table->string('sex');
+            $table->integer('age');
+            $table->string('address');
+            $table->string('position');            
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('employees');
     }
 };

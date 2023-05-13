@@ -14,7 +14,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item"><a href="/employees">Employees</a></li>
-              <li class="breadcrumb-item active">{{ $employee["firstName"]. " ".$employee["lastName"] }}</li>
+              <li class="breadcrumb-item active">{{ $employee->firstName. " ".$employee->lastName }}</li>
             </ol>
           </div>
         </div>
@@ -35,9 +35,9 @@
                        src="{{ asset('vendor') }}/dist/img/user4-128x128.jpg"
                        alt="User profile picture">
                 </div>
-                <h3 class="profile-username text-center">{{ $employee["firstName"]. " ".$employee["lastName"] }}</h3>
+                <h3 class="profile-username text-center">{{ $employee->firstName. " ".$employee->lastName }}</h3>
 
-                <p class="text-muted text-center">{{ $employee["position"] }}</p>
+                <p class="text-muted text-center">{{ $employee->position }}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
@@ -64,35 +64,24 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                <strong><i class="fas fa-solid fa-restroom mr-1"></i> Sex</strong>
 
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                  {{ $employee->sex }}
+                </p>
+
+                <hr>
+                <strong><i class="fas fa-solid fa-clock mr-1"></i> Age</strong>
+
+                <p class="text-muted">
+                  {{ $employee->age }}
                 </p>
 
                 <hr>
 
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
 
-                <p class="text-muted">Malibu, California</p>
-
-                <hr>
-
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">UI Design</span>
-                  <span class="tag tag-success">Coding</span>
-                  <span class="tag tag-info">Javascript</span>
-                  <span class="tag tag-warning">PHP</span>
-                  <span class="tag tag-primary">Node.js</span>
-                </p>
-
-                <hr>
-
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                <p class="text-muted">{{ $employee->address }}</p>                
               </div>
               <!-- /.card-body -->
             </div>

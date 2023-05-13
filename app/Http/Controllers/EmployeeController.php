@@ -15,11 +15,11 @@ class EmployeeController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Employee $employee)
     {
         return view('hr.employee', [
             "title" => "Single Employee",
-            "employee" => Employee::find($slug)
+            "employee" => $employee
         ]);
     }
 }

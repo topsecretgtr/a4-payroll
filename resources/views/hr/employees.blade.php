@@ -39,13 +39,13 @@
         <tbody>
           @foreach($employees as $employee)
             <tr>
-              <th scope="row">{{ $employee["id"] }}</th>
-              <td><a href="/employees/{{ $employee["slug"] }}">{{ $employee["firstName"] }}</td>
-              <td>{{ $employee["lastName"] }}</td>
-              <td>{{ $employee["sex"] }}</td>
-              <td>{{ $employee["age"] }}</td>
-              <td>{{ $employee["address"] }}</td>
-              <td>{{ $employee["position"] }}</td>
+              <th scope="row">{{ $employee->id }}</th>
+              <td><a href="/employees/{{ $employee->slug }}">{{ $employee->firstName }}</td>
+              <td>{{ $employee->lastName }}</td>
+              <td>{{ $employee->sex }}</td>
+              <td>{{ $employee->age }}</td>
+              <td>{{ $employee->address }}</td>
+              <td>{{ $employee->position }}</td>
             </tr>
           @endforeach
         </tbody>
