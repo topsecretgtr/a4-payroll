@@ -30,7 +30,7 @@
             <th scope="col">ID</th>
             <th scope="col"> First Name</th>
             <th scope="col"> Last Name</th>
-            <th scope="col">Sex</th>
+            <th scope="col">Gender</th>
             <th scope="col">Age</th>
             <th scope="col">Address</th>
             <th scope="col">Position</th>
@@ -43,7 +43,7 @@
               <th scope="row">{{ $employee->id }}</th>
               <td><a href="/employees/{{ $employee->slug }}">{{ $employee->firstName }}</td>
               <td>{{ $employee->lastName }}</td>
-              <td>{{ $employee->sex }}</td>
+              <td>{{ $employee->gender }}</td>
               <td>{{ $employee->age }}</td>
               <td>{{ $employee->address }}</td>
               <td>{{ $employee->position }}</td>

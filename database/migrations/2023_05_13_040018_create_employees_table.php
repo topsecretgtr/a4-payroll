@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('slug')->unique();
-            $table->string('sex');
+            $table->string('gender');
             $table->integer('age');
             $table->string('address');
             $table->string('position');            

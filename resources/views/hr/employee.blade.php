@@ -37,7 +37,7 @@
                 </div>
                 <h3 class="profile-username text-center">{{ $employee->firstName. " ".$employee->lastName }}</h3>
                 <p class="text-muted text-center">
-                  <i class="fas fa-solid fa-restroom mr-1 text-center"></i> {{ $employee->sex }}
+                  <i class="fas fa-solid fa-restroom mr-1 text-center"></i> {{ $employee->gender }}
                 </p>                  
                 <p class="text-muted text-center">
                   <i class="fas fa-solid fa-clock mr-1 text-center"></i> {{ $employee->age }}
