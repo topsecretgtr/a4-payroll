@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,20 +29,9 @@ Route::get('/employees', [EmployeeController::class, 'index']);
 
 Route::get('/employees/{employee:slug}', [EmployeeController::class, 'show']);
 
-Route::get('/departments/{department:slug}', function (Department $department){
-    return view('department.department', [
-        'title' => $department->name,
-        'employees' => $department->employee,
-        'department' => $department->name
-    ]);
-});
+Route::get('/departments', [DepartmentController::class, 'index']);
 
-Route::get('/departments', function (){
-    return view('department.departments', [
-        'title' => 'Company Departments',
-        'departments' => Department::all()
-    ]);
-});
+Route::get('/departments/{department:slug}', [DepartmentController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [
