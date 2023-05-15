@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/', function () {
             "title" => 'Home'
         ]);
 });
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/employees', [EmployeeController::class, 'index']);
 

@@ -82,6 +82,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="/users" class="nav-link {{ Request::is('users') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-regular fa-users"></i>
+            <p>
+              Users
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="/about" class="nav-link {{ Request::is('about') ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
