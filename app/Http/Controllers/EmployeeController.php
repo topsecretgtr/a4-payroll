@@ -11,7 +11,7 @@ class EmployeeController extends Controller
     {
         return view('hr.employees', [
             "title" => "All Employees",
-            "employees" => Employee::with(['user', 'department'])->get()
+            "employees" => Employee::get()
         ]);
     }
 
