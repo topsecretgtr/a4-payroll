@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Employee::factory(40)->create();
+        User::factory(40)->create();
 
         // Employee::create([
         //     'firstName' => 'Andres',

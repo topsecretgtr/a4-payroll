@@ -35,6 +35,7 @@
             <th scope="col">Address</th>
             <th scope="col">Position</th>
             <th scope="col">Department</th>
+            <th scope="col">Username</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +49,7 @@
               <td>{{ $employee->address }}</td>
               <td>{{ $employee->position }}</td>
               <td><a href="/departments/{{ $employee->department->slug }}">{{ $employee->department->name }}</td>
+              <td>{{ $employee->user->name }}</td>
             </tr>
           @endforeach
         </tbody>

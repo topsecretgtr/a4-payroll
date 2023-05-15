@@ -16,7 +16,8 @@ class EmployeeFactory extends Factory
      */
     public function definition(): array
     {
-        $gender = $this->faker->randomElement(['male', 'female']);
+        $gender = $this->faker->randomElement(['Male', 'Female']);
+        $position = $this->faker->randomElement(['Pekerja', 'Supervisor', 'Manager', 'Department Head']);
         return [
             'firstName' => $this->faker->firstName(),
             'lastName' => $this->faker->lastName(),
@@ -24,8 +25,9 @@ class EmployeeFactory extends Factory
             'gender' => $gender,
             'age' => mt_rand(20,50),
             'address' => $this->faker->address(),
-            'position' => $this->faker->word(),
-            'department_id' => mt_rand(1,3)
+            'position' => $position,
+            'department_id' => mt_rand(1,3),
+            'user_id' => mt_rand(1,40)
         ];
     }
 }
