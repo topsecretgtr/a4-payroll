@@ -10,8 +10,8 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('hr.employees', [
-            "title" => "Employees",
-            "employees" => Employee::all()
+            "title" => "All Employees",
+            "employees" => Employee::with(['user', 'department'])->get()
         ]);
     }
 

@@ -11,16 +11,15 @@ class DepartmentController extends Controller
     {
         return view('department.departments', [
             'title' => 'Company Departments',
-            'departments' => Department::all()
+            'departments' => Department::get()
         ]);
     }
 
     public function show(Department $department)
     {
-        return view('department.department', [
+        return view('hr.employees', [
             'title' => $department->name,
-            'employees' => $department->employee,
-            'department' => $department->name
+            'employees' => $department->employee->load('user', 'department')
         ]);
     }
 }
