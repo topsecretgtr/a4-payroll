@@ -68,7 +68,9 @@
 
                 <strong><i class="fas fa-map-marker-alt mr-1"></i> Department</strong>
 
-                <p class="text-muted">{{ $employee->department->name }}</p>
+                <p class="text-muted">
+                <a href="/employees?department={{ $employee->department->slug }}">{{ $employee->department->name }}</a>
+                </p>
 
                 <hr>
 

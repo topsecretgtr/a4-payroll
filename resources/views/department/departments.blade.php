@@ -35,7 +35,7 @@
           @foreach($departments as $department)
             <tr>
               <th scope="row">{{ $department->id }}</th>
-              <td><a href="/departments/{{ $department->slug }}">{{ $department->name }}</td>
+              <td><a href="/employees?department={{ $department->slug }}">{{ $department->name }}</a></td>
             </tr>
           @endforeach
         </tbody>

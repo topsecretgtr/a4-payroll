@@ -11,7 +11,7 @@ class EmployeeController extends Controller
     {
         return view('hr.employees', [
             "title" => "All Employees",
-            "employees" => Employee::get()
+            "employees" => Employee::filter(request(['search', 'department']))->paginate(10)->withQueryString()
         ]);
     }
 
